@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--
+  POIS Tracker Privacy Policy — written to match the app's actual behaviour as shipped
+  (local-first, no backend, no analytics). NOT legal advice: have it reviewed by a
+  qualified lawyer (health data + GDPR) before publishing.
+  Fill: Tiny Objects, tinyobjectssoftware@gmail.com, July 3, 2026.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POIS Tracker — Privacy Policy</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+           line-height: 1.6; color: #1c1c1e; max-width: 720px; margin: 0 auto; padding: 24px; }
+    h1 { font-size: 1.7rem; } h2 { font-size: 1.2rem; margin-top: 2rem; }
+    code { background: #f2f2f7; padding: 1px 5px; border-radius: 4px; }
+    .muted { color: #6c6c70; font-size: 0.9rem; }
+    .callout { background: #eef6f1; border: 1px solid #bfe0cd; border-radius: 8px; padding: 12px 16px; }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy</h1>
+  <p class="muted">Last updated: July 3, 2026 · Applies to the POIS Tracker iOS app ("the app").</p>
+
+  <p>POIS Tracker helps people living with post-orgasmic illness syndrome (POIS) log their
+  symptoms, treatments and recovery, and explore what helps them. It is operated by
+  Tiny Objects ("we", "us"). Questions about this policy:
+  <a href="mailto:tinyobjectssoftware@gmail.com">tinyobjectssoftware@gmail.com</a>.</p>
+
+  <div class="callout">
+    <p><strong>The short version:</strong> everything you log stays on your device — your raw
+    entries are never transmitted to us. There are no analytics, no tracking, no ads, and we
+    never sell data. The only optional sharing is a community contribution you have to explicitly
+    turn on, and even that sends only anonymised summary statistics (never your entries), pooled
+    so the results describe groups of people, not you.</p>
+  </div>
+
+  <h2>What the app stores — on your device only</h2>
+  <p>The app keeps the following in its private database on your device. None of it is ever sent
+  to us — not even if you opt in to community contribution, which sends only the anonymised
+  summary statistics described further below:</p>
+  <ul>
+    <li><strong>Health and wellbeing logs.</strong> Daily wellbeing scores, symptom ratings,
+        treatments and habits you mark as taken, personal notes, and the intimate-activity
+        events you choose to log.</li>
+    <li><strong>Personal trials.</strong> The treatment experiments you design and run in the
+        app, including their schedule, results and your notes.</li>
+    <li><strong>Profile.</strong> Sex at birth, birth year, and — optionally — height, weight
+        and when your symptoms first appeared.</li>
+    <li><strong>Account email.</strong> The email address you enter is currently stored on your
+        device only. There is no authentication server; it exists so your account can be
+        connected to a sync service in a future version. If that changes, this policy will be
+        updated first.</li>
+    <li><strong>Settings.</strong> Preferences such as which factors you track, reminder times,
+        appearance, and the app-lock setting.</li>
+  </ul>
+
+  <h2>What ever leaves your device</h2>
+  <ul>
+    <li><strong>Purchases (Apple).</strong> Subscriptions are processed entirely by Apple through
+        your Apple&nbsp;ID. We never see your payment details; the app checks your subscription
+        status locally through Apple's StoreKit. Apple's own
+        <a href="https://www.apple.com/legal/privacy/">privacy policy</a> applies to that processing.</li>
+    <li><strong>PDF export (you-initiated).</strong> If you use "Export for clinician", the app
+        generates a PDF on-device and hands it to the iOS share sheet. Where it goes from there
+        (mail, print, files) is entirely your choice.</li>
+    <li><strong>Your own device backups.</strong> Like most apps, POIS Tracker's data can be
+        included in the device backup you control (iCloud Backup or a computer backup). Those
+        backups are managed and encrypted by Apple under your Apple&nbsp;ID — we have no access
+        to them.</li>
+    <li><strong>Optional community contribution</strong> — see the next section. Off by default;
+        nothing is transmitted without your explicit, opt-in consent, and only anonymised summary
+        statistics are ever sent — never your raw entries.</li>
+  </ul>
+
+  <h2>Community: viewing vs. contributing</h2>
+  <p><strong>Viewing</strong> the Community section requires no sharing at all — the aggregate
+  information shown there today is bundled, illustrative example data (labelled as such in the
+  app) and reading it sends nothing anywhere.</p>
+  <p><strong>Contributing</strong> is separate, off by default, and only available after an
+  explicit consent screen restricted to confirmed adults (18+). If you consent, the app computes
+  and sends only <em>summary statistics</em> — never your raw daily logs. A contribution contains,
+  per factor you have enough data on:</p>
+  <ul>
+    <li>a <em>relationship strength</em> — a single number describing how a treatment or habit
+        tracked with your wellbeing over time (a statistic, never the underlying day-by-day
+        scores), together with the number of days it summarises;</li>
+    <li>a <em>how-it-feels rating</em> — your own sense of whether a factor helped, as one value;</li>
+    <li>a <em>before/after-"O" timing read</em> — for as-needed treatments, whether taking it
+        before versus after was associated with a better recovery.</li>
+  </ul>
+  <p>Each item is labelled only by the <em>name of the factor and outcome</em> (for example
+  "magnesium" and "wellbeing"). Never included: your daily logs, any exact dates or timestamps,
+  notes or free text, your profile, or any account, device, or advertising identifier.</p>
+  <p><strong>Rate-limiting without identifying you.</strong> So that no single device can flood
+  the pool, each contribution carries a random token the app generates for itself. The server
+  never receives that token directly — it receives only a one-way cryptographic hash of it, which
+  it uses solely to enforce "at most one contribution per device per week". The hash cannot be
+  reversed to the token, is never linked to the contents of your contribution, and is never shown
+  to anyone.</p>
+  <p><strong>k-anonymity.</strong> A factor's community result is only ever published once several
+  independent people (currently at least six) have contributed to it — a pooled number that
+  describes a group is shown, never anything traceable to one person.</p>
+  <p><strong>Withdrawal and deletion.</strong> At the moment you contribute, the server returns a
+  one-time deletion token, stored on your device. Withdrawing consent in Settings stops future
+  contributions, deletes anything still queued locally, and — if a contribution was already sent —
+  uses that token to request its deletion from the server. Please note one inherent limit of any
+  aggregate: a community result that was already computed and shown to others before your deletion
+  cannot be "un-mixed" from that past result; your data is removed from all <em>future</em>
+  aggregations.</p>
+
+  <h2>What we do not do</h2>
+  <ul>
+    <li>No analytics or telemetry — the app contains no analytics or tracking SDKs.</li>
+    <li>No advertising, and no sale or rental of data — there is nothing to sell; we don't have
+        your data.</li>
+    <li>No tracking across apps or websites (our App Store privacy manifest declares
+        <code>NSPrivacyTracking = false</code>).</li>
+  </ul>
+
+  <h2>Security</h2>
+  <p>The app's database is protected with iOS file protection
+  (<code>NSFileProtectionComplete</code>), which keeps it encrypted while your device is locked.
+  You can additionally require Face&nbsp;ID / Touch&nbsp;ID or your passcode to open the app
+  (Settings → Privacy). Because the data lives only on your device, protecting the device itself
+  (passcode, Find&nbsp;My) is the most important safeguard.</p>
+
+  <h2>Retention and deletion</h2>
+  <p>Your logged data stays on your device until you remove it. You can delete a single day's entry
+  from its day view, or use <strong>Delete account</strong> (Settings → Profile) to permanently
+  erase everything — logs, trials, profile, settings, queued contributions and reminders — from
+  the device. Since your logs live only on your device, this on-device deletion is complete for
+  them. The one exception is community contributions you have already sent: those are held on our
+  server, and deleting the app or your account requests their deletion using the one-time token on
+  your device (subject to the aggregate limit noted in the community section). Deleting the app
+  from your device also removes its local data (except any copies in your own backups, which you
+  control).</p>
+
+  <h2>Your rights and choices</h2>
+  <ul>
+    <li><strong>Access / portability.</strong> Export a structured summary of your data as a PDF
+        at any time (Settings → Clinician).</li>
+    <li><strong>Rectification.</strong> Every entry can be edited or deleted in the app.</li>
+    <li><strong>Erasure.</strong> "Delete account" erases everything, immediately and
+        irreversibly.</li>
+    <li><strong>Consent withdrawal.</strong> Community contribution can be withdrawn at any time
+        in Settings; the pending queue is deleted on withdrawal.</li>
+    <li><strong>EU/EEA &amp; UK users (GDPR / UK GDPR).</strong> Because your entries are
+        processed only on your device, we do not receive or hold your personal data; where any
+        processing by us does occur, the legal bases are your consent (community contribution)
+        and performance of our contract with you (providing the app). You can exercise your
+        rights with the in-app tools above or by contacting
+        <a href="mailto:tinyobjectssoftware@gmail.com">tinyobjectssoftware@gmail.com</a>, and you may lodge a complaint with
+        your local data protection authority. Apple acts as an independent controller for
+        purchase processing.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>POIS Tracker is for adults only. The app requires you to confirm you are 18 or older during
+  onboarding and does not allow use below that age.</p>
+
+  <h2>International transfers</h2>
+  <p>Your logged data never leaves your device, so it is never transferred anywhere. If you
+  opt in to community contribution, the anonymised summary statistics described above are sent to
+  our community server, which may be hosted outside your country; because those contributions
+  carry no identifier and are only ever published as pooled, k-anonymous group results, they do
+  not identify you. Apple's processing of your purchases is governed by Apple's own terms and
+  safeguards.</p>
+
+  <h2>Changes</h2>
+  <p>If we change this policy — in particular, before any community service goes live or any
+  sync feature is introduced — we will update the "Last updated" date and flag material changes
+  in the app before they take effect.</p>
+
+  <h2>Contact</h2>
+  <p>Tiny Objects · <a href="mailto:tinyobjectssoftware@gmail.com">tinyobjectssoftware@gmail.com</a></p>
+</body>
+</html>
