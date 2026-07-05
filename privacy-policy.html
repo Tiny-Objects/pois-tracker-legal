@@ -76,9 +76,10 @@
   </ul>
 
   <h2>Community: viewing vs. contributing</h2>
-  <p><strong>Viewing</strong> the Community section requires no sharing at all — the aggregate
-  information shown there today is bundled, illustrative example data (labelled as such in the
-  app) and reading it sends nothing anywhere.</p>
+  <p><strong>Viewing</strong> the Community section requires no sharing at all. It shows pooled
+  community results computed on our server from consented contributions (sections may be empty
+  until enough people have contributed). Reading it only downloads those group-level aggregates —
+  nothing about you is sent.</p>
   <p><strong>Contributing</strong> is separate, off by default, and only available after an
   explicit consent screen restricted to users who confirm they are 16 or older. If you consent, the app computes
   and sends only <em>summary statistics</em> — never your raw daily logs. A contribution contains,
@@ -89,7 +90,13 @@
         scores), together with the number of days it summarises;</li>
     <li>a <em>how-it-feels rating</em> — your own sense of whether a factor helped, as one value;</li>
     <li>a <em>before/after-"O" timing read</em> — for as-needed treatments, whether taking it
-        before versus after was associated with a better recovery.</li>
+        before versus after was associated with a better recovery;</li>
+    <li>a <em>factor pairing</em> — when your data suggests two factors helped (or clashed)
+        in combination, the direction of that finding as a single yes/no vote — never the
+        underlying numbers;</li>
+    <li>a <em>recovery curve</em> — your typical day-by-day recovery shape after an episode,
+        with versus without a factor, as per-day medians over many episodes — never any single
+        day's value.</li>
   </ul>
   <p>Each item is labelled only by the <em>name of the factor and outcome</em> (for example
   "magnesium" and "wellbeing"). Never included: your daily logs, any exact dates or timestamps,
@@ -105,6 +112,20 @@
   describes a group is shown, never anything traceable to one person. Because each contribution
   carries only summary statistics for a neutrally-named factor (no name, age, sex, location,
   dates, or free text), a pooled result over that group cannot be traced back to any individual.</p>
+  <h2>Sharing a trial (optional, public)</h2>
+  <p>Separately from the statistics above, you can choose to <strong>share an individual
+  treatment trial</strong> with the community, via an explicit per-trial toggle when you set the
+  trial up. This is a public post: other users of the app can see it and rate whether it was
+  useful. A shared trial contains only structured data: the treatment(s) tried (by their library
+  name), the schedule as day numbers (never calendar dates), your 0&#8211;10 daily wellbeing and
+  symptom series over the trial, whether it was completed as planned, and — only if you tick them
+  — coarse ranges of profile fields (for example an age band like "25&#8211;34", never an exact
+  age). Your trial's name, your notes, calendar dates, and any identifier never leave the device;
+  the server also rejects any value outside these structured formats. You can <strong>stop sharing
+  at any time</strong> from the trial's own screen — the app holds a per-trial deletion token and
+  uses it to remove the shared copy; deleting your account does the same for everything you
+  shared. Usefulness votes are counted once per device using the same one-way hash described
+  above, and are never linked to identity.</p>
   <p><strong>Withdrawal and deletion.</strong> At the moment you contribute, the server returns a
   one-time deletion token, stored on your device. Withdrawing consent in Settings stops future
   contributions, deletes anything still queued locally, and — if a contribution was already sent —
